@@ -14,7 +14,8 @@ const Login = () => {
             localStorage.setItem('user', JSON.stringify(data.user));
             navigate('/');
         } catch (err) {
-            alert(err.response?.data?.message || 'Invalid credentials');
+            console.error(err);
+            alert(err.response?.data?.message || err.message || 'Invalid credentials');
         }
     };
 

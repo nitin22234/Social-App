@@ -13,7 +13,8 @@ const Signup = () => {
             alert('Account created! Please login.');
             navigate('/login');
         } catch (err) {
-            alert(err.response?.data?.message || 'Something went wrong');
+            console.error(err);
+            alert(err.response?.data?.message || err.message || 'Something went wrong');
         }
     };
 

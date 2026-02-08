@@ -53,7 +53,7 @@ const Feed = () => {
                 const { data } = await API.post('/upload', formData, {
                     headers: { 'Content-Type': 'multipart/form-data' }
                 });
-                finalImageUrl = `http://localhost:5000${data.imageUrl}`;
+                finalImageUrl = data.imageUrl;
             }
 
             await API.post('/posts', { content, imageUrl: finalImageUrl });
